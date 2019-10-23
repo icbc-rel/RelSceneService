@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body,
+html {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    font-family: "lucida grande", "lucida sans unicode", lucida, helvetica,
+    "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+ul {
+    list-style: none;
+}
+.mask{
+    width: 85%;
+    height: 11.3rem;
+    overflow-y: scroll;
+    position: relative;
+    border-radius: 10px;
+    margin: 0.5rem auto;
+    box-shadow: 1px 1px 10px #666666;
+}
+
+.mycard-ui {
+    width: 100%;
+    height: 11.3rem;
+    overflow-y: scroll;
+    position: relative;
+    background-image: url(../image/wish_card/bg_birth_2.jpg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+#pic {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    opacity: 0;
+}
+.save-pic {
+    position: fixed;
+    width: 2.8rem;
+    height: 0.6rem;
+    font-weight: 600;
+    background: rgba(133, 8, 8, 0.3);
+    color: #ffffff;
+    text-align: center;
+    left: 2.35rem;
+    bottom: 0.5rem;
+    font-size: 0.2rem;
+    margin: 0.2rem auto;
+    line-height: 0.6rem;
+    border-radius: 5rem;
+}
+
+.container-box {
+    width: 90%;
+    height: 4.8rem;
+    margin: 0 auto;
+    padding-top: calc(11.5rem - 5.2rem);
+}
+
+.container-box .touxiang {
+    width: 100%;
+    height: 1rem;
+}
+
+.container-box > img {
+    display: block;
+    width: 20%;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 0;
+}
+
+.container-box .wish-text {
+    width: 100%;
+    height: 1.6rem;
+    color: #ffffff;
+    padding: 2% 0;
+    font-size: 0.3rem;
+    overflow: hidden;
+}
+.container-box .staff-name {
+    text-align: left;
+    font-size: 0.5rem;
+    color: #ffffff;
+}
+.container-box .send-time {
+    width: 50%;
+    height: 6%;
+    float: right;
+    color: #ffffff;
+    padding: 2%;
+    text-align: right;
+    font-size: 0.3rem;
+    overflow: hidden;
+}
+.container-box .byname-text {
+    width: 50%;
+    height: 0.35rem;
+    float: right;
+    color: #ffffff;
+    padding: 2%;
+    text-align: right;
+    font-size: 0.3rem;
+    overflow: hidden;
+}
+/* µ¯´° */
+.prompt {
+    position: fixed;
+    width: 50%;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    background: rgba(0, 0, 0, 0.26);
+    display: none;
+    top: 40%;
+    left: 25%;
+    text-align: center;
+    color: #ffffff;
+}

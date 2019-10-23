@@ -19,8 +19,8 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
           class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
         <property name="jobDetail" ref="jobDetail"></property>
         <!-- 每天的0点，8点，20点，22点触发-->
-     <!--   <property name="cronExpression" value="0 0 0,8,20,22 * * ?"></property>-->
-        <property name="cronExpression" value="0/10 * * * * ?"></property>
+        <property name="cronExpression" value="0 0 0,8,20,22 * * ?"></property>
+        <!-- <property name="cronExpression" value="0/10 * * * * ?"></property>-->
     </bean>
     <!-- 总管理容器 -->
     <bean id="startQuartz"

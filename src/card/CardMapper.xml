@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.icbc.rel.com.icbc.rel.hefei.dao.card.CardDao">
+    <resultMap id="BaseResultMap" type="com.icbc.rel.com.icbc.rel.hefei.entity.card.Card">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="mpid" jdbcType="VARCHAR" property="mpid"/>
+        <result column="type" jdbcType="INTEGER" property="type"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="bg" jdbcType="VARCHAR" property="bg"/>
+        <result column="write_name" jdbcType="VARCHAR" property="writeName"/>
+        <result column="send_num" jdbcType="INTEGER" property="sendNum"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="condition" jdbcType="TINYINT" property="condition"/>
+        <result column="send_time" jdbcType="INTEGER" property="sendTime"/>
+        <result column="wish" jdbcType="LONGVARCHAR" property="wish"/>
+    </resultMap>
+    <insert id="save" parameterType="com.icbc.rel.com.icbc.rel.hefei.entity.card.Card" useGeneratedKeys="true" keyProperty="id">
+        insert into `card` (`mpid`, `type`, `name`, `bg`, `write_name`, `send_num`, `create_time`, `condition`,`send_time`,`wish`)
+        values ('${mpid}', #{type}, '${name}', '${bg}', '${writeName}', #{sendNum}, #{createTime}, #{condition},#{sendTime},'${wish}')
+    </insert>
+    <update id="update" parameterType="com.icbc.rel.com.icbc.rel.hefei.entity.card.Card">
+        update `card`
+    set
+      `mpid` = '${mpid}',
+      `type` = #{type},
+      `name` = '${name}',
+      `bg` = '${bg}',
+      `write_name` = '${writeName}',
+      `send_num` = #{sendNum},
+      `create_time` = #{createTime},
+      `condition` = #{condition},
+      `send_time` = #{sendTime},
+      `wish` = '${wish}'
+      where id=#{id}
+    </update>
+    <delete id="delete" >
+          update `card`
+       set
+      `condition` = 1
+      where id=#{param1} and `mpid`='${param2}'
+    </delete>
+    <select id="findAll" resultMap="BaseResultMap">
+         SELECT `id`, `mpid`, `type`, `name`, `bg`, `write_name`, `send_num`, `create_time`, `condition`,`send_time`,`wish`
+        FROM `card` WHERE `condition`!=1 and `mpid`='${_parameter}'
+    </select>
+
+    <select id="selectById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select `id`, `mpid`, `type`, `name`, `bg`, `write_name`, `send_num`, `create_time`, `condition`,`send_time`,`wish`
+        from `card` where `id`=#{param1} and `condition`!=1 and '${param2}'
+    </select>
+
+</mapper>

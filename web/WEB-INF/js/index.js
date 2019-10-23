@@ -48,7 +48,7 @@ layui.use(['carousel','table'], function(){
 			if(data.relSceneUid=='lottery'){
 				window.location.href='./../mp/lotteryAnalysis?activityUid='+data.activityUid;
 			}if(data.relSceneUid=='order'){
-				window.location.href='./../mp/orderAnalysis?activityUid='+data.activityUid;
+				window.location.href='./../mp/analysis?activityUid='+data.activityUid;
 			}if(data.relSceneUid=='meeting'){
 				window.location.href='./../mp/appoint?activityUid='+data.activityUid;
 			}if(data.relSceneUid=='asks'){
