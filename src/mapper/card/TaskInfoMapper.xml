@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.icbc.rel.hefei.dao.card.TaskInfoDao">
+    <resultMap id="BaseResultMap" type="com.icbc.rel.hefei.entity.card.TaskInfo">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="mpid" jdbcType="VARCHAR" property="mpid"/>
+        <result column="task_id" jdbcType="INTEGER" property="taskId"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="cus_name" jdbcType="VARCHAR" property="cusName"/>
+        <result column="send_time" jdbcType="TIMESTAMP" property="sendTime"/>
+        <result column="view_time" jdbcType="TIMESTAMP" property="viewTime"/>
+        <result column="is_del" jdbcType="TINYINT" property="isDel"/>
+        <result column="task_time" jdbcType="TIMESTAMP" property="taskTime"/>
+        <result column="birthday" jdbcType="DATE" property="birthday"/>
+    </resultMap>
+    <select id="selectSendTaskInfo" parameterType="java.lang.String" resultMap="BaseResultMap">
+  select `id`, `mpid`, `task_id`, `phone`, `cus_name`, `send_time`, `view_time`, `is_del`, `task_time`,`birthday`
+        from `task_info` where TIMESTAMPDIFF(SECOND,(`task_time`),('${_parameter}')) &lt;= 600 and `is_del`=0
+    </select>
+    <insert id="save" parameterType="com.icbc.rel.hefei.entity.card.TaskInfo">
+        insert into `task_info` ( `mpid`, `task_id`, `phone`, `cus_name`,`is_del`, `task_time`,`birthday`)
+        values ('${mpid}',#{taskId},'${phone}','${cusName}',#{isDel},#{taskTime},#{birthday})
+    </insert>
+    <update id="update" parameterType="com.icbc.rel.hefei.entity.card.TaskInfo">
+        update `task_info`
+       set
+      `mpid` = '${mpid}',
+      `task_id` = #{taskId},
+      `phone` = '${phone}',
+      `cus_name` = '${cusName}',
+      `send_time` = #{sendTime},
+      `view_time` = #{viewTime},
+      `is_del` = #{isDel},
+      `task_time` = #{taskTime},
+      `birthday` = #{birthday}
+      where id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+      update `task_info`
+       set
+      `is_del` = 1,
+      where `id`=#{id}
+    </delete>
+
+    <delete id="deleteByTaskId" parameterType="java.lang.Integer">
+      update `task_info`
+       set
+      `is_del` = 1,
+      where `taskId`=#{taskId}
+    </delete>
+</mapper>
+
