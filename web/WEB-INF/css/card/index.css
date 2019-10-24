@@ -1,0 +1,253 @@
+﻿.q1 {
+  border: 1px solid #d8d8d8;
+  height: 300px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+#lunbotu img {
+  width: 100%;
+}
+
+.layui-carousel-ind ul {
+  position: absolute;
+  top: -330px;
+  right: 50px;
+}
+.layui-form-label {
+  width: auto;
+}
+
+.layui-carousel {
+  background-color: white;
+}
+
+.layui-carousel > [carousel-item] > * {
+  background-color: white;
+}
+
+.layui-carousel[lay-indicator="outside"] .layui-carousel-ind ul {
+  background-color: white;
+}
+
+.layui-carousel-ind li {
+  background-color: #d2d2d2;
+}
+
+.layui-table-cell {
+  height: auto;
+  line-height: 28px;
+}
+
+.layui-table-view .layui-form-checkbox[lay-skin="primary"] i {
+  width: 17px;
+  height: 17px;
+}
+
+.layui-carousel-ind li.layui-this {
+  background-color: #777;
+}
+.layui-table-cell .layui-form-checkbox[lay-skin="primary"] {
+  top: 1px;
+}
+
+.layui-table-view .layui-form-radio {
+  line-height: 28px;
+}
+
+.layui-table-tool {
+  z-index: 10;
+}
+
+.card-title {
+  width: 98%;
+  height: 20px;
+  margin: 10px;
+  padding-bottom: 2px;
+  font-weight: bold;
+  border-bottom: 2px solid #666666;
+}
+
+.type-choice {
+  display: flex;
+  width: 98%;
+  height: 25px;
+  margin: 10px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #666666;
+  align-items: center;
+}
+.type-choice > li {
+  display: flex;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.preview {
+  width: 50%;
+  height: 750px;
+  /* background: #666666; */
+  text-align: center;
+}
+
+.config {
+  width: 50%;
+  height: 750px;
+  background: #333333;
+  text-align: center;
+}
+
+.card-type{
+  display: flex;
+  margin-left: 10px;
+  align-items: center;
+}
+.card-type .choice-box {
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(102, 102, 102, 1);
+  border-radius: 10%;
+  margin-right: 2px;
+}
+
+.card-model {
+  background-image: url("../../image/card/card_birth_1.jpg");
+  width: 375px;
+  height: 667px;
+}
+
+#example-card{
+  width: 260px;
+  margin-top: 20px;
+  float: left;
+}
+#coupon-panel {
+  padding: 20px;
+  overflow: hidden;
+}
+
+.btnpic {
+  background: white;
+  padding: 5px 0px 0px;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  bottom: 50px;
+  position: absolute;
+}
+
+.example {
+  width: 260px;
+  min-height: 465px;
+  padding: 10px 0;
+  z-index: 50;
+  background-size: 100% 100%;
+}
+.swiper-slide img {
+  width: 150px;
+  height: 250px;
+}
+.swiper-container {
+  width: 100%;
+  height: 250px;
+}
+
+.swiper-slide {
+  background: rgb(255, 255, 255);
+  width: 150px;
+  height: 250px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin-right:20px;
+}
+
+.red{
+  color:red;
+}
+
+.choose-festival{
+  display: none;
+}
+.layui-input-inline>select{
+  height: 38px;
+  line-height: 1.3;
+  line-height: 38px\9;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+#festival-date{
+  display: none;
+  float: left;
+  width: 190px;
+  margin-right: 10px;
+}
+.staff-info{
+  width: 100px;
+  height: 100px;
+  /* border:1px solid white; */
+  margin: 10px auto;
+  text-align: center;
+  color: #ffffff;
+}
+.container{
+  width: 90%;
+  height: 50%;
+  margin: 10px auto;
+  margin-top: 260px;
+}
+.container>img{
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 1px auto;
+}
+.container>.staff-name{
+  color: #ffffff;
+  font-size: 10px;
+}
+
+.wish-text{
+  width: 100%;
+  /* height: 140px; */
+  border: 1px dashed rgba(122,122,122,0.7);
+  margin-bottom: 5px;
+  color: #ffffff;
+  /* padding: 5px; */
+  overflow: hidden;
+  font-size: 8px;
+}
+
+.byname-text{
+  width: 60%;
+  height: 15px;
+  border: 1px dashed rgba(122,122,122,0.7);
+  float: right;
+  color: #ffffff;
+  padding: 5px;
+  text-align: right;
+  line-height: 15px;
+  overflow: hidden;
+}
+.send-Time{
+  width: 145px;
+  height: 30px;
+  float: right;
+  color: #ffffff;
+
+  text-align: right;
+  line-height: 35px;
+  overflow: hidden;
+}
+.top-box{
+  width: 100%;
+  height: 25%;
+  padding-top: 30px;
+}
+.bottom-box{
+  width: 100%;
+  height: 65%;
+}
