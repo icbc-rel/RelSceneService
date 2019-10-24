@@ -11,8 +11,8 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http：//www.w3.org/TR/xhtml1/D
     <script src="../../js/jquery-3.2.1.min.js"></script>
     <SCRIPT src="../../js/swiper.min.js"></SCRIPT>
     <script src="../../css/layui/layui.js"></script>
-    <link rel="stylesheet" href="../../js/card/common.js" type="text/css"/>
-    <link rel="stylesheet" href="../../css/card/common.css" type="text/css"/>
+    <link rel="stylesheet" href="../../js/common.js" type="text/css"/>
+    <link rel="stylesheet" href="../../css/common.css" type="text/css"/>
 
     <link rel="stylesheet" href="../../css/layui/css/layui.css" media="all">
     <LINK href="../../css/swiper.min.css" rel="stylesheet">
@@ -42,7 +42,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http：//www.w3.org/TR/xhtml1/D
             <div class="main">
                 <div id="circle-panel">
                     <div class="layui-card">
-                        <!-- <div class="layui-mapper.card-header" ></div> -->
+                        <!-- <div class="layui-card-header" ></div> -->
                         <div class="layui-card-body">
                             <div class="layui-tab layui-tab-brief" lay-fiter="docDemoTabBrief">
                                 <ul class="layui-tab-title">
@@ -228,7 +228,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http：//www.w3.org/TR/xhtml1/D
 
     <div class="footer"></div>
     <script src="../../js/card/index.js"></script>
-    <script src="../../js/card/common.js"></script>
+    <script src="../../js/common.js"></script>
     <script type="text/html" id="xuhao">
         <!-- {{d.LAY_table_INDEX+1}} -->
     </script>
@@ -277,8 +277,8 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http：//www.w3.org/TR/xhtml1/D
 
         // 选择贺卡类型生日或者节日
         var type = 0;
-        $('.mapper.card-type').click(e => {
-            if(e.target.className == 'mapper.card-type'
+        $('.card-type').click(e => {
+            if(e.target.className == 'card-type'
         )
         {
             type = e.target.id;
@@ -579,9 +579,9 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http：//www.w3.org/TR/xhtml1/D
                         'bg': imgUrl,
                         'type': type,
                     }
-                    var url='${pageContext.request.contextPath}/mapper.card';
+                    var url='${pageContext.request.contextPath}/card';
                     <c:if test="${not empty card.id}">
-                    url='${pageContext.request.contextPath}/mapper.card/'+${card.id}
+                    url='${pageContext.request.contextPath}/card/'+${card.id}
                         </c:if>
                         $.ajax({
                             type: "POST",

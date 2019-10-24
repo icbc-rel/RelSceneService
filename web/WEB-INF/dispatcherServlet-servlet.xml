@@ -18,7 +18,6 @@
     <mvc:resources mapping="/css/**" location="/WEB-INF/css/"/>
     <mvc:resources mapping="/image/**" location="/WEB-INF/image/"/>
     <mvc:resources mapping="/js/**" location="/WEB-INF/js/"/>
-    <mvc:resources mapping="/static/**" location="/WEB-INF/static/"/>
     <mvc:resources mapping="/file/**" location="/WEB-INF/file/"/>
     <!--配置视图解析器，方便页面返回  -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

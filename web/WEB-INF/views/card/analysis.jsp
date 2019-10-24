@@ -17,7 +17,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http：//www.w3.org/TR/xhtml1/D
     <SCRIPT src="../../js/echarts.min.js"></SCRIPT>
     <SCRIPT src="../../css/layui/layui.js"></SCRIPT>
     <LINK href="../../css/layui/css/layui.css" rel="stylesheet" media="all">
-    <LINK href="../../css/card/common.css" rel="stylesheet" type="text/css">
+    <LINK href="../../css/common.css" rel="stylesheet" type="text/css">
     <LINK href="../../css/card/analysis.css" rel="stylesheet" type="text/css">
 
     <META name="GENERATOR" content="MSHTML 11.00.10570.1001">
@@ -124,7 +124,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http：//www.w3.org/TR/xhtml1/D
     </DIV>
 </DIV>
 <DIV class="footer"></DIV>
-<SCRIPT src="../../js/card/common.js"></SCRIPT>
+<SCRIPT src="../../js/common.js"></SCRIPT>
 
 <SCRIPT type="text/javascript">
     var id=${id};
@@ -133,7 +133,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http：//www.w3.org/TR/xhtml1/D
     // TODO::接口，获取数据
     $(document).ready(function () {
         $.ajax({
-            url: "${pageContext.request.contextPath}/mapper.card/"+id,// 请求分析数据
+            url: "${pageContext.request.contextPath}/card/"+id,// 请求分析数据
             datatype: "json",
             async: false,
             success: function (data) {

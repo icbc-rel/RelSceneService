@@ -4,11 +4,10 @@ import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
 import com.icbc.rel.hefei.entity.card.Card;
 import com.icbc.rel.hefei.entity.card.IdWorker;
-import com.icbc.rel.hefei.entity.card.RtfContent;
 import com.icbc.rel.hefei.entity.card.TaskInfo;
 import com.icbc.rel.hefei.service.card.CardService;
 import com.icbc.rel.hefei.service.card.TaskInfoService;
-import com.icbc.rel.hefei.service.sys.MessageService;
+import com.icbc.rel.hefei.service.rel.MessageService;
 import com.icbc.rel.hefei.util.anaylsisXmlUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -34,7 +33,6 @@ public class SendCardJob {
 
     public void send() {
         Card card = null;
-        RtfContent rtfContent = null;
         String activityId = null;
         List<TaskInfo> taskInfos = null;
         Map<Integer, Card> cardIdMap = new HashMap(16);
@@ -103,7 +101,8 @@ public class SendCardJob {
                 String channel = "3";
                 //*  图文为news其它为raw*//*
                 String msgType = "raw";
-                String content = "<a href=链接/mycard?cid="+cid+">";
+                // todo 需要将地址替换成
+                String content = "<a href='{host}/card/mycard?cid="+cid+"'>点击打开贺卡</a>";
                 //*组装发送体*//*
                 String finalXmlStr = anaylsisXmlUtil.makeXmlByHf005(mpId, multiSend, channel, mpUserPhone, msgType, content);
                 //*调用service发送消息体*//*

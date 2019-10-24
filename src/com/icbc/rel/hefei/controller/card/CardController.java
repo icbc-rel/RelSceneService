@@ -36,7 +36,7 @@ public class CardController {
      * @param request
      * @return
      */
-    @PostMapping("/mapper/card")
+    @PostMapping("/card")
     public String save(Card card, HttpServletRequest request) {
         Map rtnMap = new HashMap<>(16);
         try {
@@ -77,7 +77,7 @@ public class CardController {
      * @param card
      * @return
      */
-    @PostMapping("/mapper/card/{id}")
+    @PostMapping("/card/{id}")
     public String update(Card card, @PathVariable Integer id) {
         Map rtnMap = new HashMap(2);
         try {
@@ -110,7 +110,7 @@ public class CardController {
      * @param id
      * @return
      */
-    @DeleteMapping("/mapper/card/delete/{id}")
+    @DeleteMapping("/card/delete/{id}")
     public Map delete(@PathVariable("id") Integer id) {
         Map rtnMap = new HashMap<>(16);
         try {
@@ -131,14 +131,14 @@ public class CardController {
     @GetMapping("/cardconfig")
     public ModelAndView getCardConfig() {
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("mapper/card/cardconfig");
+        mav.setViewName("card/cardconfig");
         return mav;
     }
 
     @GetMapping("/task")
     public ModelAndView getTask() {
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("mapper/card/task");
+        mav.setViewName("card/task");
         return mav;
     }
 
@@ -147,7 +147,7 @@ public class CardController {
      *
      * @return
      */
-    @GetMapping("/mapper/card")
+    @GetMapping("/card")
     public Map getCard() {
         Map rtnMap = new HashMap(16);
         try {
@@ -174,7 +174,7 @@ public class CardController {
      * @param id
      * @return
      */
-    @GetMapping("/mapper/card/{id}")
+    @GetMapping("/card/{id}")
     public Map getCard(@PathVariable Integer id) {
         Map rtnMap = null;
         try {
@@ -206,7 +206,7 @@ public class CardController {
     @GetMapping("/analysis/{id}")
     public ModelAndView getAnalysis(@PathVariable Integer id) {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("mapper/card/analysis");
+        modelAndView.setViewName("card/analysis");
         modelAndView.addObject("id", id);
         return modelAndView;
     }
@@ -220,12 +220,11 @@ public class CardController {
     @GetMapping("/updatecardconfig")
     public ModelAndView getCardConfig(Integer id) {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("mapper/card/cardconfig");
+        modelAndView.setViewName("card/cardconfig");
         String mpId = SessionUtil.getMpId(request.getSession());
-        modelAndView.addObject("mapper/card", cardService.selectById(id,mpId));
+        modelAndView.addObject("card", cardService.selectById(id,mpId));
         return modelAndView;
     }
-
     /**
      *c¶Ë¿¨Æ¬Ò³Ãæ
      * @param cid
@@ -240,9 +239,10 @@ public class CardController {
             String portrait = ImUserService.FetchUserInfoByMobileNo(taskInfo.getPhone()).getPortrait();
             modelAndView.addObject("url", portrait);
             Card card = cardService.selectById(taskInfo.getTaskId(),taskInfo.getMpid());
-            modelAndView.setViewName("mapper/card/mycard");
-            modelAndView.addObject("mapper/card", card);
-            modelAndView.addObject("taskInfo", taskInfo);
+            modelAndView.setViewName("card/mycard");
+            modelAndView.addObject("card", card);
+            String sendTime=String.format("%tY-%<tm-%<td",DateUtil.offsetHour(taskInfo.getSendTime(),  - 13));
+            modelAndView.addObject("sendTime",sendTime);
             taskInfo.setViewTime(DateUtil.offsetHour(new Date(), 13));
             taskInfoService.update(taskInfo);
             return modelAndView;
@@ -251,5 +251,4 @@ public class CardController {
         }
         return modelAndView;
     }
-
 }

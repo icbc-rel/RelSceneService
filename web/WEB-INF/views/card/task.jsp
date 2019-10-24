@@ -8,8 +8,8 @@
     <script src="../../js/jquery-3.2.1.min.js"></script>
     <SCRIPT src="../../js/swiper.min.js"></SCRIPT>
     <script src="../../css/layui/layui.js"></script>
-    <link rel="stylesheet" href="../../js/card/common.js" type="text/css"/>
-    <link rel="stylesheet" href="../../css/card/common.css" type="text/css"/>
+    <link rel="stylesheet" href="../../js/common.js" type="text/css"/>
+    <link rel="stylesheet" href="../../css/common.css" type="text/css"/>
 
     <link rel="stylesheet" href="../../css/layui/css/layui.css" media="all">
     <LINK href="../../css/swiper.min.css" rel="stylesheet">
@@ -59,7 +59,7 @@
 
 <div class="footer"></div>
 <script src="../../js/card/index.js"></script>
-<script src="../../js/card/common.js"></script>
+<script src="../../js/common.js"></script>
 <script type="text/html" id="xuhao">
     {{d.LAY_TABLE_INDEX+1}}
 </script>
@@ -72,7 +72,7 @@
         mytable = table.render({
             id: 'demoReload'
             , elem: '#demo'
-            , url: '${ pageContext.request.contextPath }/mapper.card' //获取场景数据
+            , url: '${ pageContext.request.contextPath }/card' //获取场景数据
             , method: "get"
             , height: 800
             , cols: [[ //表头
@@ -96,7 +96,7 @@
                 layer.confirm('确认删除活动?', { icon: 3, title: '提示' }, function (index) {
                     $.ajax({
                         type: "delete",
-                        url: "${ pageContext.request.contextPath }/mapper.card/delete/" + data.id,
+                        url: "${ pageContext.request.contextPath }/card/delete/" + data.id,
                         dataType: "json",
                         contentType: "application/json;charset=utf-8",
                         async: false,

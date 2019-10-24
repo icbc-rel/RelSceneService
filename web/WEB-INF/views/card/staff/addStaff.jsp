@@ -8,7 +8,7 @@
     <script src="../../../js/jquery-3.2.1.min.js"></script>
     <script src="../../../css/layui/layui.js"></script>
     <link href="../../../css/layui/css/layui.css" rel="stylesheet" media="all">
-    <link href="../../../css/card/common.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/common.css" rel="stylesheet" type="text/css">
     <script src="../../../js/card/jquery.serializejson.min.js"></script>
     <link id="layuicss-layer"
           href="https://cjy.icbc.com.cn/RelSceneService/css/layui/css/modules/layer/default/layer.css?v=3.1.1"

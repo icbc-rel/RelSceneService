@@ -130,7 +130,7 @@ public class TaskInfoController {
     @GetMapping("/staff/addStaff")
     public ModelAndView addStaff() {
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("mapper/card/staff/addStaff");
+        mav.setViewName("card/staff/addStaff");
         return mav;
     }
 

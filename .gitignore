@@ -72,4 +72,4 @@ fabric.properties
 
 /RelSceneService.iml
 /.idea/
-/src/properties/db.properties
+/src/resource/properties/db.properties
