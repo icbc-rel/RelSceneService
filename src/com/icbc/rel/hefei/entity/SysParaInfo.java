@@ -6,7 +6,7 @@ public class SysParaInfo {
      private String Value;
      private String DataName;
      private String DataType;
-
+      
 	public int getIID() {
 		return IID;
 	}

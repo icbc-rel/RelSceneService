@@ -6,15 +6,15 @@ public class Msg {
 	private int count;
 	private Object data;
 	private Object records;
-
+	
 	public Msg(int code,String msg) {
 		this.code=code;
 		this.msg=msg;
 	}
-
+	
 	public Msg() {
 	}
-
+	
 	public int getCode() {
 		return code;
 	}
@@ -51,7 +51,7 @@ public class Msg {
 	public void setRecords(Object records) {
 		this.records = records;
 	}
-
-
+	
+	
 
 }

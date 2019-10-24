@@ -72,7 +72,7 @@
         mytable = table.render({
             id: 'demoReload'
             , elem: '#demo'
-            , url: '${ pageContext.request.contextPath }/card' //获取场景数据
+            , url: '${ pageContext.request.contextPath }/mapper.card' //获取场景数据
             , method: "get"
             , height: 800
             , cols: [[ //表头
@@ -96,7 +96,7 @@
                 layer.confirm('确认删除活动?', { icon: 3, title: '提示' }, function (index) {
                     $.ajax({
                         type: "delete",
-                        url: "${ pageContext.request.contextPath }/card/delete/" + data.id,
+                        url: "${ pageContext.request.contextPath }/mapper.card/delete/" + data.id,
                         dataType: "json",
                         contentType: "application/json;charset=utf-8",
                         async: false,

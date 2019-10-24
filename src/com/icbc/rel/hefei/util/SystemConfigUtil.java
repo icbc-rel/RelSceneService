@@ -42,7 +42,7 @@ public class SystemConfigUtil {
 
 	/**
 	 * 获得配置参数
-	 *
+	 * 
 	 * @param key
 	 *            配置key
 	 * @return

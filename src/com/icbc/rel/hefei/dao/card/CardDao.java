@@ -22,7 +22,7 @@ public interface CardDao {
      * @param id
      * @return
      */
-    Card selectById(Integer id, String mpId);
+    Card selectById(Integer id,String mpId);
 
     /**
      * 更新
@@ -34,7 +34,7 @@ public interface CardDao {
      * 逻辑上删除，将condition置为1
      * @param id
      */
-    void delete(Integer id, String mpid);
+    void delete(Integer id,String mpid);
 
     List<Card> findAll(String mpId);
 }

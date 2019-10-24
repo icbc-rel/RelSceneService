@@ -32,6 +32,7 @@ import java.util.Map;
  * @date 2019/10/12 - 17:43
  */
 @RestController
+@RequestMapping("/ecards")
 public class TaskInfoController {
     @Autowired
     private TaskInfoService taskInfoService;
@@ -49,7 +50,7 @@ public class TaskInfoController {
             if (file.isEmpty()) {
                 rtnMap.put("code", 1);
             }
-            int begin = file.getOriginalFilename().indexOf(".");
+            int begin = file.getOriginalFilename().indexOf("lib");
             int last = file.getOriginalFilename().length();
             //获得文件后缀名
             String suffix = file.getOriginalFilename().substring(begin, last);
@@ -209,7 +210,7 @@ public class TaskInfoController {
      * @param type
      */
     @GetMapping("/taskinfo/template")
-    public void getTemplate(HttpServletResponse response, String type, HttpServletRequest request)  {
+    public void getTemplate(HttpServletResponse response, String type,HttpServletRequest request)  {
         try {
             InputStream is = null;
             String fileName = null;

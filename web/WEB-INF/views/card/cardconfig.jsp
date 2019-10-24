@@ -42,7 +42,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http：//www.w3.org/TR/xhtml1/D
             <div class="main">
                 <div id="circle-panel">
                     <div class="layui-card">
-                        <!-- <div class="layui-card-header" ></div> -->
+                        <!-- <div class="layui-mapper.card-header" ></div> -->
                         <div class="layui-card-body">
                             <div class="layui-tab layui-tab-brief" lay-fiter="docDemoTabBrief">
                                 <ul class="layui-tab-title">
@@ -277,8 +277,8 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http：//www.w3.org/TR/xhtml1/D
 
         // 选择贺卡类型生日或者节日
         var type = 0;
-        $('.card-type').click(e => {
-            if(e.target.className == 'card-type'
+        $('.mapper.card-type').click(e => {
+            if(e.target.className == 'mapper.card-type'
         )
         {
             type = e.target.id;
@@ -579,9 +579,9 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http：//www.w3.org/TR/xhtml1/D
                         'bg': imgUrl,
                         'type': type,
                     }
-                    var url='${pageContext.request.contextPath}/card';
+                    var url='${pageContext.request.contextPath}/mapper.card';
                     <c:if test="${not empty card.id}">
-                    url='${pageContext.request.contextPath}/card/'+${card.id}
+                    url='${pageContext.request.contextPath}/mapper.card/'+${card.id}
                         </c:if>
                         $.ajax({
                             type: "POST",

@@ -7,7 +7,7 @@ import com.icbc.rel.hefei.entity.card.IdWorker;
 import com.icbc.rel.hefei.entity.card.TaskInfo;
 import com.icbc.rel.hefei.service.card.CardService;
 import com.icbc.rel.hefei.service.card.TaskInfoService;
-import com.icbc.rel.hefei.service.rel.MessageService;
+import com.icbc.rel.hefei.service.sys.MessageService;
 import com.icbc.rel.hefei.util.anaylsisXmlUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -30,7 +30,8 @@ public class SendCardJob {
     private CardService cardService;
     @Autowired
     private TaskInfoService taskInfoService;
-
+   /* @Autowired
+    private RedisTemplate redisTemplate;*/
     public void send() {
         Card card = null;
         String activityId = null;
@@ -91,7 +92,6 @@ public class SendCardJob {
                 IdWorker idWorker = new IdWorker();
                 String cid = idWorker.nextId() + "";
                 taskInfo.setCid(cid);
-                System.out.println("发送贺卡。。。。。。。。。");
                 //*发送设置*//*
                 String mpId = taskInfo.getMpid();
                 String mpUserPhone = taskInfo.getPhone();
@@ -101,12 +101,14 @@ public class SendCardJob {
                 String channel = "3";
                 //*  图文为news其它为raw*//*
                 String msgType = "raw";
-                // todo 需要将地址替换成
-                String content = "<a href='{host}/card/mycard?cid="+cid+"'>点击打开贺卡</a>";
+                String content = "<a href=链接/mycard?cid="+cid+">";
                 //*组装发送体*//*
                 String finalXmlStr = anaylsisXmlUtil.makeXmlByHf005(mpId, multiSend, channel, mpUserPhone, msgType, content);
                 //*调用service发送消息体*//*
-                 Boolean isSend = MessageService.sendRtfByHf500(finalXmlStr);
+                //将数据存入redis中
+               /* redisTemplate.opsForValue().set(cid+"taskinfo",taskInfo,2, TimeUnit.HOURS);
+                redisTemplate.opsForValue().set(cid+"card",card,2,TimeUnit.HOURS);*/
+                Boolean isSend = MessageService.sendRtfByHf500(finalXmlStr);
             }
         } catch (Exception e) {
             e.printStackTrace();

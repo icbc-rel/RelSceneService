@@ -58,8 +58,8 @@ public class CardServiceImpl implements CardService {
     }
 
    /* @Override
-    public void update(Card mapper.card, List<TaskInfo> taskInfos) {
-        cardDao.update(mapper.card);
+    public void update(Card card, List<TaskInfo> taskInfos) {
+        cardDao.update(card);
         for (TaskInfo taskInfo : taskInfos) {
             taskInfoService.update(taskInfo);
         }

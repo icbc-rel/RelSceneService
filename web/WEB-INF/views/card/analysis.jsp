@@ -133,7 +133,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http：//www.w3.org/TR/xhtml1/D
     // TODO::接口，获取数据
     $(document).ready(function () {
         $.ajax({
-            url: "${pageContext.request.contextPath}/card/"+id,// 请求分析数据
+            url: "${pageContext.request.contextPath}/mapper.card/"+id,// 请求分析数据
             datatype: "json",
             async: false,
             success: function (data) {
@@ -307,7 +307,6 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http：//www.w3.org/TR/xhtml1/D
     })
     })*/
 
-    //TODO::查询指定日期所有订单
     layui.use('form', function () {
         var form = layui.form;
         form.on('submit(queryOrder)', function (data) {

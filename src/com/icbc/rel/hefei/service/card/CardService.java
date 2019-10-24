@@ -27,7 +27,7 @@ public interface CardService {
      * @param id
      * @return
      */
-    Card selectById(Integer id, String mpId);
+    Card selectById(Integer id,String mpId);
 
     /**
      * job完成后修改专用
@@ -47,7 +47,7 @@ public interface CardService {
      * 逻辑上删除，实际数据库还有
      * @param id
      */
-    void delete(Integer id, String mpid);
+    void delete(Integer id,String mpid);
 
     /**
      * 查询所有

@@ -21,6 +21,7 @@ import java.util.*;
  * @date 2019/10/12 - 9:15
  */
 @RestController
+@RequestMapping("/ecards")
 public class CardController {
     @Autowired
     private CardService cardService;
@@ -128,12 +129,6 @@ public class CardController {
         return rtnMap;
     }
 
-    @GetMapping("/cardconfig")
-    public ModelAndView getCardConfig() {
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("card/cardconfig");
-        return mav;
-    }
 
     @GetMapping("/task")
     public ModelAndView getTask() {
@@ -225,6 +220,7 @@ public class CardController {
         modelAndView.addObject("card", cardService.selectById(id,mpId));
         return modelAndView;
     }
+
     /**
      *c¶Ë¿¨Æ¬Ò³Ãæ
      * @param cid
@@ -241,8 +237,7 @@ public class CardController {
             Card card = cardService.selectById(taskInfo.getTaskId(),taskInfo.getMpid());
             modelAndView.setViewName("card/mycard");
             modelAndView.addObject("card", card);
-            String sendTime=String.format("%tY-%<tm-%<td",DateUtil.offsetHour(taskInfo.getSendTime(),  - 13));
-            modelAndView.addObject("sendTime",sendTime);
+            modelAndView.addObject("taskInfo", taskInfo);
             taskInfo.setViewTime(DateUtil.offsetHour(new Date(), 13));
             taskInfoService.update(taskInfo);
             return modelAndView;
@@ -251,4 +246,5 @@ public class CardController {
         }
         return modelAndView;
     }
+
 }
